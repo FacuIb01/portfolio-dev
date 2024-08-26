@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import Socialpill from "../icons/Socialpill.astro";
+import BriefCase from "../icons/BriefCase.astro";
+import Github from "../icons/Github.astro";
+import Mail from "../icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+	title="Porfolio de Facu.ib -- Desarrollador de Software y Programador Web"
+	description="Contrata a Facu.ib para crear tu aplicacion favorita. Desarrollador de aplicaciones Web y de escritorio. Soluciones Unicas para problemas unicos."
+>
+	<main class="px-4">
+		<SectionContainer class="py-36 lg:pd-20 pd-15">
+			<img
+				src="/facu-dev.png"
+				alt="facu.ib foto"
+				class="rounded-full mb-4 h-16"
+			/>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb:10"
+			>
+				Hola, soy Facu.Ib
+				<a
+					href="https://www.linkedin.com/in/facundoibañez/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+				>
+					<Badge> Disponible para trabajar </Badge>
+
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-x-[100px]">
+					Desarrollador de Software y estudiante de tercer año de la carrera "Licenciatura en
+					Sistemas" en la Universidad Nacional de General Sarmiento. Graduado de la carrera de Full-Stack MERN en CoderHouse.
+				<span class="opacity-80"><br><br>De Argentina 🇦🇷 para el mundo 🌐</span>
+			</h2>
+
+			<nav class="flex gap-x-3 mt-9 flex-wrap">
+				<Socialpill href="https://www.linkedin.com/in/facundoibañez/">
+					<Linkedin class="size-4 md:size-6" />
+					Linkedin
+				</Socialpill>
+				<Socialpill href="https://github.com/FacuIb01">
+					<Github class="size-4 md:size-6" />
+					Github
+				</Socialpill>
+				<Socialpill
+					href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqrdnQhghBVShHtwZhWzQBgHNldczphSWHmpvPgzwmNQSxZfvdhxcVXwlBvHznLwDQjq"
+				>
+					<Mail class="size-4 md:size-6" />
+					facundoemiliano.21@gmail.com
+				</Socialpill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-8 flex gap-x-2 items-center">
+				<BriefCase class="size-8" />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-8 flex gap-x-2 items-center ">
+				<Code class="size-10"/>
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>
+
+<style></style>

@@ -1,0 +1,119 @@
+---
+import React from "../icons/React.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import FireBase from "../icons/FireBase.astro";
+import Java from "../icons/Java.astro";
+
+const TAGS = {
+	REACT: {
+		name: "React.js",
+		class: "bg-black text-white",
+		icon: React,
+	},
+	HTML: {
+		name: "HTML",
+		class: "bg-black text-white",
+		icon: Html,
+	},
+	CSS: {
+		name: "CSS",
+		class: "bg-black text-white",
+		icon: Css,
+	},
+	JAVASCRIPT: {
+		name: "JavaScript",
+		class: "bg-black text-white",
+		icon: JavaScript,
+	},
+	FIREBASE: {
+		name: "FireBase",
+		class: "bg-black text-white",
+		icon: FireBase,
+	},
+	JAVA: {
+		name: "Java",
+		class: "bg-black text-white",
+		icon: Java,
+	},
+};
+
+const PROJECTS = [
+	{
+		title: "OverPowerStore",
+		description:
+			"Ecommerce creado con FireBase y ReactJS, funcionalidades como carritos, manejo de estados y manejo de bases de datos.",
+		link: "https://github.com/FacuIb01/ReactJs-Coderhouse/tree/master",
+		github: "https://github.com/FacuIb01/ReactJs-Coderhouse/tree/master",
+		image: "/projects/overpowerstore.webp",
+		tags: [TAGS.FIREBASE, TAGS.HTML, TAGS.REACT, TAGS.CSS],
+	},
+	{
+		title: "ViajeFeliz",
+		description:
+			"Software de empresa de turismo capaz de guardar clientes, crear viajes, paquetes, servicios y control de fechas.",
+		link: "https://github.com/FacuIb01/ViajeFeliz",
+		github: "https://github.com/FacuIb01/ReactJs-Coderhouse/tree/master",
+		image: "/projects/ViajeFeliz.jpg",
+		tags: [TAGS.JAVA],
+	},
+	{
+		title: "Tateti",
+		description: "Tateti contra la pc creado en JavaScript",
+		link: "https://github.com/FacuIb01/ReactJs-Coderhouse/tree/master",
+		github: "https://github.com/FacuIb01/ReactJs-Coderhouse/tree/master",
+		image: "/projects/tateti.jpg",
+		tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.CSS],
+	},
+];
+---
+
+{
+	PROJECTS.map((proyecto) => (
+		<article class="flex justify-start align-middle flex-col mt-4 flex-wrap lg:pd-20 pd-15">
+			<h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+				{proyecto.title}
+			</h3>
+			<p class="text-lg lg:text-2xl text-wrap max-x-[100px]" >{proyecto.description}</p>
+			<ul class="flex gap-x-5 flex-row my-5 flex-wrap">
+				{proyecto.tags.map((tag) => (
+					<li>
+						<span
+							class={` rounded-full border border-white/20 flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-2 text-xs md:text-base bg-white/5 hover:scale-110 transition hover:bg-white/10 ${tag.class}`}
+						>
+							<tag.icon class="size-4" />
+							{tag.name}
+						</span>
+					</li>
+				))}
+				<a
+					href={proyecto.link}
+					class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+				>
+					Ver proyecto{" "}
+					<svg
+						class="w-3 h-3 ms-2 rtl:rotate-180"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 14 10"
+					>
+						<path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M1 5h12m0 0L9 1m4 4L9 9"
+						/>
+					</svg>
+				</a>
+			</ul>
+			<img
+				class="rounded"
+				src={proyecto.image}
+				alt="Captura de pantalla del proyecto"
+			/>
+		</article>
+	))
+}
